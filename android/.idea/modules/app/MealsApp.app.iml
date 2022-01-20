@@ -151,6 +151,7 @@
     <orderEntry type="module" module-name="MealsApp.react-native-reanimated" />
     <orderEntry type="module" module-name="MealsApp.react-native-safe-area-context" />
     <orderEntry type="module" module-name="MealsApp.react-native-svg" />
+    <orderEntry type="module" module-name="MealsApp.react-native-vector-icons" />
     <orderEntry type="module" module-name="MealsApp.expo-modules-core" />
     <orderEntry type="module" module-name="MealsApp.expo-application" />
     <orderEntry type="module" module-name="MealsApp.expo-font" />

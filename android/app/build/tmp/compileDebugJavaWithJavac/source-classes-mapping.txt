@@ -1,0 +1,14 @@
+com/aprevo/app/BuildConfig.java
+ com.aprevo.app.BuildConfig
+com/aprevo/app/ReactNativeFlipper.java
+ com.aprevo.app.ReactNativeFlipper
+ com.aprevo.app.ReactNativeFlipper$1
+ com.aprevo.app.ReactNativeFlipper$2
+ com.aprevo.app.ReactNativeFlipper$2$1
+com/aprevo/app/MainActivity.java
+ com.aprevo.app.MainActivity
+com/aprevo/app/MainApplication.java
+ com.aprevo.app.MainApplication
+ com.aprevo.app.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

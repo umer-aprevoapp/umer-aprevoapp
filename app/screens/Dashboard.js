@@ -5,6 +5,10 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import CaseListScreen from "../screens/CaseListScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import { DrawerContent } from "../drawer/DrawerContent";
+import SettingsScreen from "./SettingsScreen";
+import ComplianceScreen from "./ComplianceScreen";
+import AboutScreen from "./AboutScreen";
+import ReportsScreen from "./ReportsScreen";
 const { width } = Dimensions.get("screen");
 
 const Drawer = createDrawerNavigator();
@@ -24,8 +28,24 @@ const Dashboard = (props) => {
         options={{ headerShown: false }}
       />
       <Drawer.Screen
-        name="Favourite"
-        component={FavoritesScreen}
+        name="Settings"
+        component={SettingsScreen}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen
+        name="Compliance"
+        component={ComplianceScreen}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen
+        name="About"
+        component={AboutScreen}
+        options={{ headerShown: false }}
+      />
+
+      <Drawer.Screen
+        name="Reports"
+        component={ReportsScreen}
         options={{ headerShown: false }}
       />
     </Drawer.Navigator>

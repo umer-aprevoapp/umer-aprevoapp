@@ -4,7 +4,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import Color from "../../assets/colors/Color";
 import font from "../../assets/fonts/font";
 
-function IButton(props) {
+const IButton = (props) => {
   return (
     <View
       style={{
@@ -20,7 +20,7 @@ function IButton(props) {
       </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   button: {

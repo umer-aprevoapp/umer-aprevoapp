@@ -1,11 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import Color from "../../assets/colors/Color";
+import IHeader from "../components/IHeader";
 
 function FavoritesScreen(props) {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Color.white }}>
       <View>
-        <Text>This is a Favourite item screen</Text>
+        <IHeader
+          headerTitle="Case List"
+          onIconClicked={() => props.navigation.toggleDrawer()}
+        />
       </View>
     </SafeAreaView>
   );

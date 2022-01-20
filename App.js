@@ -16,7 +16,7 @@ export default function App() {
       {
         <Stack.Navigator initialRouteName="Logo">
           <Stack.Screen
-            // options={{ title: "" }}
+            options={{ headerShown: false, title: null }}
             name="Logo"
             component={LogoScreen}
           />

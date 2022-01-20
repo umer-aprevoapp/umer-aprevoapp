@@ -5,4 +5,6 @@ export default {
   dodgerblue: "dodgerblue",
   grey: "#808080",
   placeHolderText: "#454545",
+  test: "#ccc",
+  green: "#90EE90",
 };
