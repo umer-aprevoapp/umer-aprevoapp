@@ -9,6 +9,7 @@ import LogoScreen from "./app/screens/LogoScreen";
 import Dashboard from "./app/screens/Dashboard";
 
 import LoginScreen from "./app/screens/auth/LoginScreen";
+import ProfileScreen from "./app/screens/ProfileScreen";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -25,6 +26,11 @@ export default function App() {
           <Stack.Screen
             name="Dashboard"
             component={Dashboard}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Profile"
+            component={ProfileScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

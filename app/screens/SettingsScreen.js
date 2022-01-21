@@ -16,9 +16,9 @@ function SettingsScreen(props) {
         <IHeader
           headerTitle="Settings"
           showInputField={false}
+          showAddIcon={false}
           filterIcon="search"
           filterIconSize={RFValue(20)}
-          showAddIcon={false}
           navigation={props.navigation}
         />
         <View

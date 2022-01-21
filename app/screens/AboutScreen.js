@@ -7,10 +7,7 @@ function AboutScreen(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: Color.white }}>
       <View>
-        <IHeader
-          headerTitle="About"
-          onIconClicked={() => props.navigation.toggleDrawer()}
-        />
+        <IHeader headerTitle="About" navigation={props.navigation} />
       </View>
     </SafeAreaView>
   );

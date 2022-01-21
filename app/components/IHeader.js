@@ -7,23 +7,25 @@ import font from "../../assets/fonts/font";
 import IonIcons from "./IonIcons";
 import FontAwsomeIcon from "./FontAwsomeIcon";
 
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import ITextView from "./ITextView";
 
 function IHeader({
   headerTitle,
   filterIcon = "filter",
   showInputField = true,
   showAddIcon = true,
-  filterIconSize = 0,
+  filterIconSize = 25,
+  isMenuButton = true,
+  isProfileIcon = true,
   navigation,
 }) {
-  console.log(navigation);
   return (
     <View style={{ overflow: "hidden", paddingBottom: 5 }}>
       <View style={styles.mainContainer}>
         <View style={styles.itemsContainer}>
           <Text style={styles.logoText}>aprevo 2.0</Text>
-          {console.log(showInputField)}
+
           {showInputField ? (
             <Text style={styles.headerTitleStyle}>{headerTitle}</Text>
           ) : (
@@ -39,18 +41,56 @@ function IHeader({
             ) : (
               <View></View>
             )}
-            <FontAwsomeIcon
-              name="user"
-              // onPress={() => navigation.navigate("Profile")}
-            />
+            {isProfileIcon ? (
+              <FontAwsomeIcon
+                name="user"
+                onPress={() => {
+                  navigation.navigate("Profile");
+                }}
+              />
+            ) : null}
           </View>
         </View>
 
         <View style={[styles.itemsContainer, { marginTop: RFValue(10) }]}>
-          <IonIcons
-            name="menu"
-            onIconClicked={() => navigation.toggleDrawer()}
-          />
+          {isMenuButton ? (
+            <IonIcons
+              name="menu"
+              onIconClicked={() => navigation.toggleDrawer()}
+            />
+          ) : (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              activeOpacity={0.8}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  alignContent: "center",
+                }}
+              >
+                <IonIcons
+                  color={Color.primary}
+                  name="chevron-back"
+                  fontSize={25}
+                  onIconClicked={() => {
+                    console.log(navigation);
+                    navigation.goBack();
+                  }}
+                />
+                <ITextView
+                  text="Back"
+                  style={{
+                    color: Color.primary,
+                    fontSize: RFValue(15),
+                    textAlign: "right",
+                  }}
+                />
+              </View>
+            </TouchableOpacity>
+          )}
+
           {showInputField ? (
             <View style={styles.inputContainerStyle}>
               <FontAwsomeIcon
@@ -70,7 +110,7 @@ function IHeader({
               <FontAwsomeIcon name="microphone" fontSize={15} />
             </View>
           ) : (
-            <Text style={styles.headerTitleStyle}>{headerTitle}</Text>
+            <Text style={[styles.headerTitleStyle, {}]}>{headerTitle}</Text>
           )}
           <FontAwsomeIcon name={filterIcon} fontSize={filterIconSize} />
         </View>

@@ -34,6 +34,7 @@ export function DrawerContent(props) {
             alignItems: "center",
           }}
         >
+          {/* User Profile Container */}
           <View
             style={{
               justifyContent: "center",
@@ -70,6 +71,7 @@ export function DrawerContent(props) {
             />
           </View>
 
+          {/* CaseList Navigation Container */}
           <View style={{ ...styles.viewContainer }}>
             <TouchableOpacity
               activeOpacity={0.5}
@@ -89,6 +91,7 @@ export function DrawerContent(props) {
             </TouchableOpacity>
           </View>
 
+          {/* Settings Navigation Container */}
           <View style={{ ...styles.viewContainer }}>
             <TouchableOpacity
               style={{ width: "100%", flexDirection: "row" }}
