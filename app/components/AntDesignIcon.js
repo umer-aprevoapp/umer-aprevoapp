@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Color from "../../assets/colors/Color";
+
 function AntDesignIcon({
   color = Color.black,
   name,

@@ -19,10 +19,7 @@ function CaseListScreen(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: Color.white }}>
       <View>
-        <IHeader
-          headerTitle="Case List"
-          onIconClicked={() => props.navigation.toggleDrawer()}
-        />
+        <IHeader headerTitle="Case List" navigation={props.navigation} />
         <FlatList
           style={{ width: "100%", height: "100%" }}
           data={CaseListItems}

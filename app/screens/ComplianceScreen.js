@@ -7,10 +7,7 @@ function ComplianceScreen(props) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: Color.white }}>
       <View>
-        <IHeader
-          headerTitle="Compliance"
-          onIconClicked={() => props.navigation.toggleDrawer()}
-        />
+        <IHeader headerTitle="Compliance" navigation={props.navigation} />
       </View>
     </SafeAreaView>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import { color } from "react-native-reanimated";
 import { RFValue } from "react-native-responsive-fontsize";
 import Color from "../../assets/colors/Color";
 import font from "../../assets/fonts/font";

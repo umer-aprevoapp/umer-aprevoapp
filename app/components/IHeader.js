@@ -9,44 +9,70 @@ import FontAwsomeIcon from "./FontAwsomeIcon";
 
 import { TextInput } from "react-native-gesture-handler";
 
-function IHeader(props) {
-  console.log(props);
+function IHeader({
+  headerTitle,
+  filterIcon = "filter",
+  showInputField = true,
+  showAddIcon = true,
+  filterIconSize = 0,
+  navigation,
+}) {
+  console.log(navigation);
   return (
     <View style={{ overflow: "hidden", paddingBottom: 5 }}>
       <View style={styles.mainContainer}>
         <View style={styles.itemsContainer}>
           <Text style={styles.logoText}>aprevo 2.0</Text>
-          <Text style={styles.headerTitleStyle}>{props.headerTitle}</Text>
+          {console.log(showInputField)}
+          {showInputField ? (
+            <Text style={styles.headerTitleStyle}>{headerTitle}</Text>
+          ) : (
+            <View></View>
+          )}
 
           <View style={styles.iconsContainer}>
+            {showAddIcon ? (
+              <FontAwsomeIcon
+                name="plus-square"
+                style={{ marginHorizontal: RFValue(12) }}
+              />
+            ) : (
+              <View></View>
+            )}
             <FontAwsomeIcon
-              name="plus-square"
-              style={{ marginHorizontal: RFValue(12) }}
+              name="user"
+              // onPress={() => navigation.navigate("Profile")}
             />
-            <FontAwsomeIcon name="user" />
           </View>
         </View>
 
         <View style={[styles.itemsContainer, { marginTop: RFValue(10) }]}>
-          <IonIcons name="menu" onIconClicked={props.onIconClicked} />
+          <IonIcons
+            name="menu"
+            onIconClicked={() => navigation.toggleDrawer()}
+          />
+          {showInputField ? (
+            <View style={styles.inputContainerStyle}>
+              <FontAwsomeIcon
+                fontSize={15}
+                name="search"
+                onPress={() => this.myTextInput.focus()}
+              />
 
-          <View style={styles.inputContainerStyle}>
-            <FontAwsomeIcon
-              fontSize={15}
-              name="search"
-              onPress={() => this.myTextInput.focus()}
-            />
-            <TextInput
-              ref={(ref) => {
-                this.myTextInput = ref;
-              }}
-              style={styles.textInputStyle}
-              placeholder="Search with Case #, Surgeon, Patient"
-            />
-            <FontAwsomeIcon name="microphone" fontSize={15} />
-          </View>
+              <TextInput
+                ref={(ref) => {
+                  this.myTextInput = ref;
+                }}
+                style={styles.textInputStyle}
+                placeholder="Search with Case #, Surgeon, Patient"
+              />
 
-          <FontAwsomeIcon name="filter" />
+              <FontAwsomeIcon name="microphone" fontSize={15} />
+            </View>
+          ) : (
+            <Text style={styles.headerTitleStyle}>{headerTitle}</Text>
+          )}
+          <FontAwsomeIcon name={filterIcon} fontSize={filterIconSize} />
         </View>
       </View>
     </View>

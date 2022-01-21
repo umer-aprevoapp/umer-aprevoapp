@@ -1,8 +1,9 @@
-import CategoriesScreen from "./app/screens/CategoriesScreen";
-import CategoryMealScreen from "./app/screens/CategoryMealScreen";
-import MealDetailsScreen from "./app/screens/MealDetailsScreen";
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LogoScreen from "./app/screens/LogoScreen";
 import Dashboard from "./app/screens/Dashboard";
@@ -26,23 +27,17 @@ export default function App() {
             component={Dashboard}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="Categories"
-            // options={{ title: "" }}
-            component={CategoriesScreen}
-          />
-          <Stack.Screen
-            name="CategoryMeal"
-            // options={{ title: "" }}
-            component={CategoryMealScreen}
-          />
-          <Stack.Screen
-            name="MealDetails"
-            // options={{ title: "" }}
-            component={MealDetailsScreen}
-          />
         </Stack.Navigator>
       }
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

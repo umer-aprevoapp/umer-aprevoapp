@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EXErrorRecovery.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EXFileSystem.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,7 +69,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MealsApp.xcscheme</key>
+		<key>Pods-aprevoapp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -90,11 +95,6 @@
 			<false/>
 		</dict>
 		<key>RNReanimated.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RNSVG.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -225,11 +225,6 @@
 			<false/>
 		</dict>
 		<key>glog.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>react-native-floating-label-input.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
