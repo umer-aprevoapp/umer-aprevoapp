@@ -8,7 +8,8 @@ import Color from "../../../assets/colors/Color";
 import { ModalDatePicker } from "react-native-material-date-picker";
 import Moment from "moment";
 import FontAwsomeIcon from "../../components/FontAwsomeIcon";
-
+import CheckBox from "@react-native-community/checkbox";
+import font from "../../../assets/fonts/font";
 const CaseDetailsRoute = () => {
   const [direction, setDirection] = useState(
     GET_DROPDOWN_DIRECTION(DROPDOWN_DIRECTION.DEFAULT)
@@ -48,6 +49,7 @@ const CaseDetailsRoute = () => {
     { label: "Umer Abidin", value: "umer_abidin" },
     { label: "Jeff", value: "jeff" },
   ]);
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
 
   return (
     <View style={{ flex: 1 }}>
@@ -135,6 +137,16 @@ const CaseDetailsRoute = () => {
           </View>
         </View>
         <View style={{ ...styles.viewDivider }}></View>
+      </View>
+
+      <View style={styles.checkboxContainer}>
+        <CheckBox
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+          style={styles.checkbox}
+        />
+        <Text style={styles.label}>Tentative</Text>
       </View>
 
       <View
@@ -255,5 +267,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "baseline",
     justifyContent: "flex-end",
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    marginEnd: RFValue(30),
+  },
+  checkbox: {
+    alignSelf: "center",
+  },
+  label: {
+    margin: RFValue(5),
+    fontFamily: font.opensans_medium,
   },
 });
