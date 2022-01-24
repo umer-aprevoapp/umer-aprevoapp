@@ -1,15 +1,13 @@
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { View } from "react-native";
 import Color from "../../assets/colors/Color";
 import IHeader from "../components/IHeader";
 
 function ComplianceScreen(props) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Color.white }}>
-      <View>
-        <IHeader headerTitle="Compliance" navigation={props.navigation} />
-      </View>
-    </SafeAreaView>
+    <View style={{ flex: 1, backgroundColor: Color.white }}>
+      <IHeader headerTitle="Compliance" navigation={props.navigation} />
+    </View>
   );
 }
 

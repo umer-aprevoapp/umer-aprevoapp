@@ -1,6 +1,6 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -10,32 +10,42 @@ import Dashboard from "./app/screens/Dashboard";
 
 import LoginScreen from "./app/screens/auth/LoginScreen";
 import ProfileScreen from "./app/screens/ProfileScreen";
+import Color from "./assets/colors/Color";
+import AddCaseTabsNavigator from "./app/screens/AddCaseTabsNavigator";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      {
-        <Stack.Navigator initialRouteName="Logo">
-          <Stack.Screen
-            options={{ headerShown: false, title: null }}
-            name="Logo"
-            component={LogoScreen}
-          />
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen
-            name="Dashboard"
-            component={Dashboard}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Profile"
-            component={ProfileScreen}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      }
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar style="auto" backgroundColor={Color.dodgerblue} />
+      <NavigationContainer>
+        {
+          <Stack.Navigator initialRouteName="Logo">
+            <Stack.Screen
+              options={{ headerShown: false, title: null }}
+              name="Logo"
+              component={LogoScreen}
+            />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen
+              name="Dashboard"
+              component={Dashboard}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Profile"
+              component={ProfileScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AddNewCase"
+              component={AddCaseTabsNavigator}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        }
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 

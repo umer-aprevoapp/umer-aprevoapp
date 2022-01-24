@@ -28,19 +28,18 @@ function IHeader({
 
           {showInputField ? (
             <Text style={styles.headerTitleStyle}>{headerTitle}</Text>
-          ) : (
-            <View></View>
-          )}
+          ) : null}
 
           <View style={styles.iconsContainer}>
             {showAddIcon ? (
               <FontAwsomeIcon
                 name="plus-square"
                 style={{ marginHorizontal: RFValue(12) }}
+                onPress={() => {
+                  navigation.navigate("AddNewCase");
+                }}
               />
-            ) : (
-              <View></View>
-            )}
+            ) : null}
             {isProfileIcon ? (
               <FontAwsomeIcon
                 name="user"

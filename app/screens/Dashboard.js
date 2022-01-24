@@ -3,7 +3,6 @@ import { Dimensions } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import CaseListScreen from "../screens/CaseListScreen";
-import FavoritesScreen from "../screens/FavoritesScreen";
 import { DrawerContent } from "../drawer/DrawerContent";
 import SettingsScreen from "./SettingsScreen";
 import ComplianceScreen from "./ComplianceScreen";

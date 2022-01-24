@@ -5,11 +5,9 @@ import IHeader from "../components/IHeader";
 
 function ReportsScreen(props) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Color.white }}>
-      <View>
-        <IHeader headerTitle="Reports" navigation={props.navigation} />
-      </View>
-    </SafeAreaView>
+    <View>
+      <IHeader headerTitle="Reports" navigation={props.navigation} />
+    </View>
   );
 }
 
