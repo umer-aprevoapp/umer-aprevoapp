@@ -1,40 +1,52 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import { RFValue } from "react-native-responsive-fontsize";
+
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import CaseDetailsRoute from "./add_case_tabs/CaseDetailsRoute";
-import InterBodyRoute from "./add_case_tabs/InterBodyRoute";
-import PatientRoute from "./add_case_tabs/PatientRoute";
+
+import InterBodyTabView from "./add_case_tabs/InterBodyTabView";
 import IHeader from "../components/IHeader";
 import Color from "../../assets/colors/Color";
+import { SCREEN_NAMES } from "../../assets";
+import PatientTabView from "./add_case_tabs/PatientTabView";
+import CaseDetailsTabView from "./add_case_tabs/CaseDetailsTabView";
 
 const Tab = createMaterialTopTabNavigator();
 
-const AddCaseTabsNavigator = () => {
+const AddCaseTabsNavigator = (props) => {
   return (
     <View style={{ flex: 1 }}>
-      <IHeader />
+      <IHeader
+        showAddIcon={false}
+        isMenuButton={false}
+        navigation={props.navigation}
+        showInputField={false}
+        headerTitle={SCREEN_NAMES.ADD_NEW_CASE_SCREEN}
+        isProfileIcon={false}
+      />
       <Tab.Navigator
-        initialRouteName="Case Details"
+        initialRouteName={SCREEN_NAMES.CASE_DETAILS}
         screenOptions={{
+          swipeEnabled: false,
           tabBarActiveTintColor: Color.black,
-          tabBarLabelStyle: { fontSize: 12, color: Color.black },
+          tabBarLabelStyle: { fontSize: RFValue(12), color: Color.black },
           tabBarStyle: { backgroundColor: Color.white },
         }}
       >
         <Tab.Screen
-          name="Case Details"
-          component={CaseDetailsRoute}
-          options={{ tabBarLabel: "Case Details" }}
+          name={SCREEN_NAMES.CASE_DETAILS}
+          component={CaseDetailsTabView}
+          options={{ tabBarLabel: SCREEN_NAMES.CASE_DETAILS }}
         />
         <Tab.Screen
-          name="Inter Body"
-          component={InterBodyRoute}
+          name={SCREEN_NAMES.INTER_BODY}
+          component={InterBodyTabView}
           options={{ tabBarLabel: "Interbody" }}
         />
         <Tab.Screen
-          name="Profile"
-          component={PatientRoute}
-          options={{ tabBarLabel: "Profile" }}
+          name={SCREEN_NAMES.PATIENT_TAB_SCREEN}
+          component={PatientTabView}
+          options={{ tabBarLabel: SCREEN_NAMES.PATIENT_TAB_SCREEN }}
         />
       </Tab.Navigator>
     </View>

@@ -6,7 +6,7 @@ import Color from "../../assets/colors/Color";
 
 function FontAwsomeIcon({
   name,
-  fontSize = 25,
+  fontSize = RFValue(25),
   style,
   onPress,
   color = Color.black,

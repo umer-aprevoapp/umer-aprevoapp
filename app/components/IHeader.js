@@ -9,16 +9,18 @@ import FontAwsomeIcon from "./FontAwsomeIcon";
 
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import ITextView from "./ITextView";
+import BackNavigatorIcon from "./BackNavigatorIcon";
 
 function IHeader({
   headerTitle,
   filterIcon = "filter",
   showInputField = true,
   showAddIcon = true,
-  filterIconSize = 25,
+  filterIconSize = RFValue(20),
   isMenuButton = true,
   isProfileIcon = true,
   navigation,
+  onFilterIconPressed,
 }) {
   return (
     <View style={{ overflow: "hidden", paddingBottom: 5 }}>
@@ -58,46 +60,16 @@ function IHeader({
               onIconClicked={() => navigation.toggleDrawer()}
             />
           ) : (
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              activeOpacity={0.8}
-            >
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  alignContent: "center",
-                }}
-              >
-                <IonIcons
-                  color={Color.primary}
-                  name="chevron-back"
-                  fontSize={25}
-                  onIconClicked={() => {
-                    console.log(navigation);
-                    navigation.goBack();
-                  }}
-                />
-                <ITextView
-                  text="Back"
-                  style={{
-                    color: Color.primary,
-                    fontSize: RFValue(15),
-                    textAlign: "right",
-                  }}
-                />
-              </View>
-            </TouchableOpacity>
+            <BackNavigatorIcon navigation={navigation} />
           )}
 
           {showInputField ? (
             <View style={styles.inputContainerStyle}>
               <FontAwsomeIcon
-                fontSize={15}
+                fontSize={RFValue(15)}
                 name="search"
                 onPress={() => this.myTextInput.focus()}
               />
-
               <TextInput
                 ref={(ref) => {
                   this.myTextInput = ref;
@@ -111,7 +83,11 @@ function IHeader({
           ) : (
             <Text style={[styles.headerTitleStyle, {}]}>{headerTitle}</Text>
           )}
-          <FontAwsomeIcon name={filterIcon} fontSize={filterIconSize} />
+          <FontAwsomeIcon
+            name={filterIcon}
+            fontSize={filterIconSize}
+            onPress={onFilterIconPressed}
+          />
         </View>
       </View>
     </View>
@@ -123,6 +99,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
     width: "100%",
     paddingVertical: RFValue(10),
+
     paddingHorizontal: RFValue(10),
     justifyContent: "center",
     shadowColor: "#000",
